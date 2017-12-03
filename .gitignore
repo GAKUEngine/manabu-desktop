@@ -1,2 +1,6 @@
 *.swp
 *.swo
+*.orig
+*.glade~
+*.gem
+tmp/

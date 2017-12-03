@@ -5,14 +5,14 @@ Gem::Specification.new do |s|
   s.summary      = 'GTK based GUI client for Manabu/GAKU Engine'
   s.description  = 'Manabu Desktop is a GTK front end for the Manabu client.'
   s.post_install_message =  \
-    '╔═════════════════════════╼' +
-    "║Manabu GTK GUI for ⚙学 GAKU Engine [学エンジン] " +
-    '╟─────────────────────────╼' +
-    '║©2015 (株)幻創社 [Phantom Creation Inc.]' +
-    '║http://www.gakuengine.com' +
-    '╟─────────────────────────╼' +
-    '║Manabu GTK is Open Sourced under the GPLv3.' +
-    '╚═════════════════════════╼' 
+    "╔═════════════════════════╼\n" +
+    "║Manabu GTK GUI for ⚙学 GAKU Engine [学エンジン] \n" +
+    "╟─────────────────────────╼\n" +
+    "║©2015 (株)幻創社 [Phantom Creation Inc.]\n" +
+    "║http://www.gakuengine.com\n" +
+    "╟─────────────────────────╼\n" +
+    "║Manabu GTK is Open Sourced under the GPLv3.\n" +
+    "╚═════════════════════════╼\n" 
   s.authors      = ['Rei Kagetsuki']
   s.email        = 'info@gakuengine.com'
   s.homepage     = 'http://www.gakuengine.com'
