@@ -1,0 +1,9 @@
+en:
+  login:
+    title: GAKU Engine Login
+    server: Server Address
+    user: User Name/E-Mail address
+    pass: Password
+    button: Engage
+    success: Login Succeeded
+    failure: Login Failed

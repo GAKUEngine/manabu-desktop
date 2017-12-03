@@ -1,0 +1,9 @@
+ja:
+  login:
+    title: 学エンジンにログイン
+    server: サーバーアドレス
+    user: ユーザー名かメールアドレス
+    pass: パスワード
+    button: エンゲージ
+    success: ログインが成功しました
+    failure: ログインに失敗しました
