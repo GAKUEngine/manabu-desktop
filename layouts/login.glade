@@ -2,6 +2,11 @@
 <!-- Generated with glade 3.20.0 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
+  <object class="GtkImage" id="engage.icon">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-dialog-authentication</property>
+  </object>
   <object class="GtkWindow" id="login.window">
     <property name="can_focus">False</property>
     <child>
@@ -27,10 +32,10 @@
             <property name="can_focus">False</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkLabel" id="login.server.label">
+              <object class="GtkLabel" id="server.label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">login.server</property>
+                <property name="label" translatable="yes">server.label</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -68,10 +73,10 @@
             <property name="can_focus">False</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkLabel" id="login.user.label">
+              <object class="GtkLabel" id="user.label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">login.user</property>
+                <property name="label" translatable="yes">user.label</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -103,10 +108,10 @@
             <property name="can_focus">False</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkLabel" id="login.pass.label">
+              <object class="GtkLabel" id="password.label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">login.pass</property>
+                <property name="label" translatable="yes">password.label</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -133,11 +138,13 @@
           </packing>
         </child>
         <child>
-          <object class="GtkButton" id="login.button">
-            <property name="label" translatable="yes">login.button</property>
+          <object class="GtkButton" id="engage.button">
+            <property name="label" translatable="yes">engage.button</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
+            <property name="image">engage.icon</property>
+            <property name="always_show_image">True</property>
           </object>
           <packing>
             <property name="expand">False</property>

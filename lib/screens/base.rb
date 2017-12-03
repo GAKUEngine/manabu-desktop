@@ -6,7 +6,7 @@ module ManabuDesktop
     class Base
       attr_accessor :window, :builder
 
-      def initialize(layout)
+      def initialize(layout, locale = :c)
         @builder = Gtk::Builder.new()
         @builder.add_from_file("#{__dir__}/../../layouts/#{layout}.glade")
 

@@ -1,9 +1,14 @@
 ja:
+  main_menu:
+    title: 学メニュー
+    connect: 接続
+    settings: 設定
+    exit: 終了
   login:
     title: 学エンジンにログイン
     server: サーバーアドレス
     user: ユーザー名かメールアドレス
-    pass: パスワード
-    button: エンゲージ
+    password: パスワード
+    engage: エンゲージ
     success: ログインが成功しました
     failure: ログインに失敗しました

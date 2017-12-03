@@ -1,9 +1,14 @@
 en:
+  main_menu:
+    title: Manabu Menu
+    connect: Connect
+    settings: Settings
+    exit: Exit
   login:
     title: GAKU Engine Login
     server: Server Address
     user: User Name/E-Mail address
-    pass: Password
-    button: Engage
+    password: Password
+    engage: Engage
     success: Login Succeeded
     failure: Login Failed
