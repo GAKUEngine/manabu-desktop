@@ -4,3 +4,4 @@
 *.glade~
 *.gem
 tmp/
+Gemfile.lock
