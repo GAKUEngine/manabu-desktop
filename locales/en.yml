@@ -7,8 +7,9 @@ en:
   login:
     title: GAKU Engine Login
     server: Server Address
-    user: User Name/E-Mail address
+    user: User
     password: Password
+    secure: Force Encryption
     engage: Engage
     success: Login Succeeded
     failure: Login Failed
