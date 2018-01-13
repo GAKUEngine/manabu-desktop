@@ -4,14 +4,7 @@ gemspec
 
 group :development do
   gem 'manabu', path: '../manabu'
-  gem 'rb-inotify', require: false
-  gem 'rb-fsevent', require: false
-  gem 'guard'
-  gem 'guard-rspec'
-  gem 'rubocop'
-  gem 'guard-rubocop'
-end
-
-group :test do
+  gem 'gaku', path: '../gaku'
   gem 'rspec'
+  gem 'rake'
 end

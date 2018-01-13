@@ -45,7 +45,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkComboBoxText" id="server.dropdown">
+              <object class="GtkComboBoxText" id="server.comboboxtext">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="has_entry">True</property>

@@ -13,3 +13,32 @@ ja:
     engage: エンゲージ
     success: ログインが成功しました
     failure: ログインに失敗しました
+  toolbox:
+    title: ツールボックス
+  student:
+    id: ID
+    surname: 名字
+    name: 氏名
+    middle_name: ミドルネーム
+    surname_reading: 名字の読み方
+    name_reading: 氏名の読み方
+    middle_name_reading: ミドルネームの読み方
+    dob: 生年月日
+    sex: 性別
+    male: 男
+    female: 女
+    register: 生徒登録
+  g:
+    Students: 生徒
+    Roster: 生徒名簿
+    Courses: 授業
+    Exams: 試験
+    Administration: 管理
+    Settings: 設定
+    actions: アクション
+    create: 作成
+    register: 登録
+    new: 新規
+    edit: 編集 
+    delete: 削除
+    select: 選択
