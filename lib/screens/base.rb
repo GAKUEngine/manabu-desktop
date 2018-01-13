@@ -1,4 +1,4 @@
-require_relative '../toolbox'
+require_relative '../tools'
 require 'gtk3'
 
 module ManabuDesktop
