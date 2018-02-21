@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name         = 'manabu-desktop'
-  s.version      = '0.0.1'
-  s.licenses     = ['GPLv3']
+  s.version      = '0.0.2'
+  s.licenses     = ['GPL-3.0']
   s.summary      = 'GTK based GUI client for Manabu/GAKU Engine'
   s.description  = 'Manabu Desktop is a GTK front end for the Manabu client.'
   s.post_install_message =  \
