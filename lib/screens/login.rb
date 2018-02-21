@@ -1,8 +1,8 @@
 require_relative 'base'
+require_relative 'toolbox'
 require_relative '../util/cache'
 require_relative '../sessions'
 require 'manabu/client'
-require 'msgpack'
 
 module ManabuDesktop
   module Screens
@@ -16,13 +16,15 @@ module ManabuDesktop
 
         _load_cache()
 
+        @window.resizable = false
+
         @builder.get_object('server.label').set_label(I18n.t('login.server'))
         @builder.get_object('secure.label').set_label(I18n.t('login.secure'))
-        @server_dropdown = @builder.get_object('server.dropdown')
+        @server_comboboxtext = @builder.get_object('server.comboboxtext')
         @server_secure_switch = @builder.get_object('secure.switch')
-        @cache_info[:servers].each{ |server| @server_dropdown.append_text(server[:addr])}
+        @cache_info[:servers].each{ |server| @server_comboboxtext.append_text(server[:addr])}
         if (@cache_info[:servers].length > 0)
-          @server_dropdown.set_active(0)
+          @server_comboboxtext.set_active(0)
           @server_secure_switch.active = @cache_info[:servers][0][:secure]
         end
         # TODO: set server details when selection is changed
@@ -37,7 +39,7 @@ module ManabuDesktop
         engage_button = @builder.get_object('engage.button')
         engage_button.set_label(I18n.t('login.engage'))
         engage_button.signal_connect('clicked') {
-          _engage(@server_dropdown.active_text, @server_secure_switch.active?,
+          _engage(@server_comboboxtext.active_text, @server_secure_switch.active?,
                   @user_entry.text, @password_entry.text)
         }
 
@@ -66,13 +68,13 @@ module ManabuDesktop
         @client = Manabu::Client.new(user, password, "#{addr}#{route}", port,
                                      force_secure_connection: secure)
         if @client.status == :connected
-          _open_toolbox()
+          _open_toolbox(@client)
         end
       end
 
-      def _open_toolbox()
-        puts "opening toolbox"
-        # TODO: open toolbox
+      def _open_toolbox(client)
+        @window.destroy
+        ManabuDesktop::Screens::ToolBox.new(client)
       end
 
       def _update_server_list()

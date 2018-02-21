@@ -20,12 +20,14 @@ module ManabuDesktop
         end
 
         @window = builder.get_object("#{layout}.window")
-        @window.signal_connect('delete-event') { |_widget| Gtk.main_quit }
+        @window.signal_connect('delete-event') do |_widget|
+          @window.destroy()
+          Gtk.main_quit()
+        end
       end
 
       def _show()
         @window.show()
-
         Gtk.main()
       end
     end

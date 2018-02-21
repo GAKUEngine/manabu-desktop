@@ -13,3 +13,32 @@ en:
     engage: Engage
     success: Login Succeeded
     failure: Login Failed
+  toolbox:
+    title: Tool Box
+  student:
+    id: ID
+    surname: Surname
+    name: Name
+    middle_name: Middle Name
+    surname_reading: Surname Reading
+    name_reading: Name Reading
+    middle_name_reading: Middle Name Reading
+    dob: Birth Date
+    sex: Gender
+    male: Male
+    female: Female
+    register: Register Student
+  g:
+    Students: Students
+    Roster: Student Roster
+    Courses: Courses
+    Exams: Exams
+    Administration: Administration
+    Settings: Settings
+    actions: Actions
+    create: Create
+    register: Register
+    new: New
+    edit: Edit
+    delete: Delete
+    select: Select
