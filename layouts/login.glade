@@ -2,21 +2,21 @@
 <!-- Generated with glade 3.20.0 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
-  <object class="GtkImage" id="engage.icon">
+  <object class="GtkImage" id="engage.Icon">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="stock">gtk-dialog-authentication</property>
   </object>
-  <object class="GtkWindow" id="login.window">
+  <object class="GtkWindow" id="login.Window">
     <property name="can_focus">False</property>
     <child>
-      <object class="GtkBox" id="login.box">
+      <object class="GtkBox" id="login.Box">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <property name="spacing">6</property>
         <child>
-          <object class="GtkImage" id="logo.image">
+          <object class="GtkImage" id="logo.Image">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="pixbuf">img/gaku-logo-128.png</property>
@@ -28,12 +28,12 @@
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="server.box">
+          <object class="GtkBox" id="server.Box">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkLabel" id="server.label">
+              <object class="GtkLabel" id="server.Label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">server.label</property>
@@ -45,7 +45,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkComboBoxText" id="server.comboboxtext">
+              <object class="GtkComboBoxText" id="server.ComboBoxText">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="has_entry">True</property>
@@ -72,12 +72,12 @@
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="secure.box">
+          <object class="GtkBox" id="secure.Box">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkLabel" id="secure.label">
+              <object class="GtkLabel" id="secure.Label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">secure.label</property>
@@ -89,7 +89,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkSwitch" id="secure.switch">
+              <object class="GtkSwitch" id="secure.Switch">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="active">True</property>
@@ -108,12 +108,12 @@
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="user.box">
+          <object class="GtkBox" id="user.Box">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkLabel" id="user.label">
+              <object class="GtkLabel" id="user.Label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">user.label</property>
@@ -125,7 +125,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkEntry" id="user.entry">
+              <object class="GtkEntry" id="user.Entry">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
               </object>
@@ -143,12 +143,12 @@
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="password.box">
+          <object class="GtkBox" id="password.Box">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkLabel" id="password.label">
+              <object class="GtkLabel" id="password.Label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="label" translatable="yes">password.label</property>
@@ -160,7 +160,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkEntry" id="password.entry">
+              <object class="GtkEntry" id="password.Entry">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="visibility">False</property>
@@ -181,12 +181,12 @@
           </packing>
         </child>
         <child>
-          <object class="GtkButton" id="engage.button">
+          <object class="GtkButton" id="engage.Button">
             <property name="label" translatable="yes">engage.button</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="image">engage.icon</property>
+            <property name="image">engage.Icon</property>
             <property name="always_show_image">True</property>
           </object>
           <packing>

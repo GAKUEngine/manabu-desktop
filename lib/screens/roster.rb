@@ -18,8 +18,8 @@ module ManabuDesktop
         @client = client
         super('roster')
 
-        treeview = @builder.get_object('roster.treeview')
-        toolbar = @builder.get_object('roster.toolbar')
+        treeview = @builder.get_object('roster.TreeView')
+        toolbar = @builder.get_object('roster.Toolbar')
 
         _create_model()
         treeview.set_model(@model)
@@ -85,21 +85,33 @@ module ManabuDesktop
       def _student_select(path_str)
         path = Gtk::TreePath.new(path_str)
         iter = @model.get_iter(path)
-        fixed = iter[COLUMN_SELECT]
+        selected = iter[COLUMN_SELECT]
         # TODO: get student record and put in or remove from collection
-        fixed ^= 1
+        selected ^= 1
         iter[COLUMN_SELECT] = fixed
       end
 
       def _setup_toolbar(toolbar)
+        # new button
         register_student_button = Gtk::ToolButton.new(:stock_id => Gtk::Stock::NEW)
         register_student_button.label = I18n.t('student.register')
-        register_student_button.signal_connect "clicked" do
+        register_student_button.signal_connect('clicked') do
           ManabuDesktop::Screens::Student::Registration.new(@client, self)
         end
-        sep = Gtk::SeparatorToolItem.new
+
+        # separator
+        sep = Gtk::SeparatorToolItem.new()
+
+        # search/filtering box
+       # search_container = Gtk::Box.new(:horizontal, 10)
+       # search_entry = Gtk::SearchEntry.new()
+       # search_bar = Gtk::SearchBar.new()
+       # search_bar.connect_entry(search_entry)
+       # search_bar.add(search_container)
+
         toolbar.insert(register_student_button, 0)
         toolbar.insert(sep, 1)
+        #toolbar.insert(search_container, 2)
       end
     end
   end

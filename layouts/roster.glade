@@ -2,17 +2,45 @@
 <!-- Generated with glade 3.20.0 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
-  <object class="GtkWindow" id="roster.window">
+  <object class="GtkWindow" id="roster.Window">
     <property name="can_focus">False</property>
     <child>
-      <object class="GtkBox" id="roster.box">
+      <object class="GtkBox" id="roster.Box">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <child>
-          <object class="GtkToolbar" id="roster.toolbar">
+          <object class="GtkBox" id="roster_toolbar.Box">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <child>
+              <object class="GtkToolbar" id="roster.Toolbar">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <object class="GtkSearchEntry" id="roster.SearchEntry">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="primary_icon_name">edit-find-symbolic</property>
+                <property name="primary_icon_activatable">False</property>
+                <property name="primary_icon_sensitive">False</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -21,7 +49,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkScrolledWindow" id="roster.scrolledwindow">
+          <object class="GtkScrolledWindow" id="roster.ScrolledWindow">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="shadow_type">in</property>
@@ -30,7 +58,7 @@
             <property name="propagate_natural_width">True</property>
             <property name="propagate_natural_height">True</property>
             <child>
-              <object class="GtkTreeView" id="roster.treeview">
+              <object class="GtkTreeView" id="roster.TreeView">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <child internal-child="selection">

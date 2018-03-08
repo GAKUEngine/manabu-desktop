@@ -19,7 +19,7 @@ module ManabuDesktop
 
         @activities = [:Roster, :Courses, :Exams, :Administration]
 
-        icon_view = @builder.get_object('tools.icons')
+        icon_view = @builder.get_object('tools.IconView')
         icon_view.set_pixbuf_column(ICON_COL)
         icon_view.set_text_column(LABEL_COL)
         list = Gtk::ListStore.new(GdkPixbuf::Pixbuf, String, String)

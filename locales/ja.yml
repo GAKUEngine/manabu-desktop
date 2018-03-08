@@ -4,6 +4,7 @@ ja:
     connect: 接続
     settings: 設定
     exit: 終了
+    num_connections: 接続数
   login:
     title: 学エンジンにログイン
     server: サーバーアドレス

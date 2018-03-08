@@ -4,6 +4,7 @@ en:
     connect: Connect
     settings: Settings
     exit: Exit
+    num_connections: Active Connections
   login:
     title: GAKU Engine Login
     server: Server Address
