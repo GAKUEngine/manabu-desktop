@@ -16,6 +16,12 @@ ja:
     failure: ログインに失敗しました
   toolbox:
     title: ツールボックス
+  roster:
+    title: 生徒名簿
+  enrollment:
+    status: 在学状況
+    filter: 在学状況フィルター
+    select: 在学状況の選択
   student:
     id: ID
     surname: 名字
@@ -25,9 +31,9 @@ ja:
     name_reading: 氏名の読み方
     middle_name_reading: ミドルネームの読み方
     dob: 生年月日
-    sex: 性別
-    male: 男
-    female: 女
+    gender: 性別
+    male: ♂ 男
+    female: ♀ 女
     register: 生徒登録
   g:
     Students: 生徒
@@ -43,3 +49,6 @@ ja:
     edit: 編集 
     delete: 削除
     select: 選択
+    clear: クリア
+    reset: リセット
+    reset_filters: フィルターをリセット

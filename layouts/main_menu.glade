@@ -2,17 +2,17 @@
 <!-- Generated with glade 3.20.0 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
-  <object class="GtkImage" id="connect_button.Icon">
+  <object class="GtkImage" id="connect_button.Image">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="stock">gtk-connect</property>
   </object>
-  <object class="GtkImage" id="exit_button.Icon">
+  <object class="GtkImage" id="exit_button.Image">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="stock">gtk-quit</property>
   </object>
-  <object class="GtkImage" id="settings_button.Icon">
+  <object class="GtkImage" id="settings_button.Image">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="stock">gtk-properties</property>
@@ -45,11 +45,11 @@
         </child>
         <child>
           <object class="GtkButton" id="connect.Button">
-            <property name="label" translatable="yes">connect.button</property>
+            <property name="label" translatable="yes">connect</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="image">connect_button.Icon</property>
+            <property name="image">connect_button.Image</property>
             <property name="always_show_image">True</property>
           </object>
           <packing>
@@ -60,11 +60,11 @@
         </child>
         <child>
           <object class="GtkButton" id="settings.Button">
-            <property name="label" translatable="yes">settings.button</property>
+            <property name="label" translatable="yes">settings</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="image">settings_button.Icon</property>
+            <property name="image">settings_button.Image</property>
             <property name="always_show_image">True</property>
           </object>
           <packing>
@@ -75,11 +75,11 @@
         </child>
         <child>
           <object class="GtkButton" id="exit.Button">
-            <property name="label" translatable="yes">exit.button</property>
+            <property name="label" translatable="yes">exit</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <property name="image">exit_button.Icon</property>
+            <property name="image">exit_button.Image</property>
             <property name="always_show_image">True</property>
           </object>
           <packing>
@@ -113,7 +113,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkStatusbar" id="status.StatusBar">
+          <object class="GtkStatusbar" id="status.Statusbar">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="margin_left">10</property>

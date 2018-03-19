@@ -16,6 +16,12 @@ en:
     failure: Login Failed
   toolbox:
     title: Tool Box
+  roster:
+    title: Roster
+  enrollment:
+    status: Enrollment Status
+    filter: Filter by Enrollment
+    select: Select Enrollment Status
   student:
     id: ID
     surname: Surname
@@ -25,9 +31,9 @@ en:
     name_reading: Name Reading
     middle_name_reading: Middle Name Reading
     dob: Birth Date
-    sex: Gender
-    male: Male
-    female: Female
+    gender: Gender
+    male: ♂ Male
+    female: ♀ Female
     register: Register Student
   g:
     Students: Students
@@ -43,3 +49,6 @@ en:
     edit: Edit
     delete: Delete
     select: Select
+    clear: Clear
+    reset: Reset
+    reset_filters: Reset Filters
