@@ -12,7 +12,7 @@ module ManabuDesktop
       COLUMN_SURNAME  = 2
       COLUMN_NAME     = 3
       COLUMN_DOB      = 4
-      COLUMN_SEX      = 5
+      COLUMN_GENDER      = 5
 
       def initialize(client)
         @client = client
@@ -76,9 +76,9 @@ module ManabuDesktop
         treeview.append_column(column)
 
         renderer = Gtk::CellRendererText.new()
-        column = Gtk::TreeViewColumn.new(I18n.t("student.sex"), renderer,
-                                         "text" => COLUMN_SEX)
-        column.sort_column_id = COLUMN_SEX
+        column = Gtk::TreeViewColumn.new(I18n.t("student.gender"), renderer,
+                                         "text" => COLUMN_GENDER)
+        column.sort_column_id = COLUMN_GENDER
         treeview.append_column(column)
       end
 

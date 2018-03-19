@@ -28,11 +28,14 @@ module ManabuDesktop
             I18n.t('student.middle_name_reading'))
 
 
-          @builder.get_object('sex.Label').set_label(I18n.t('student.sex'))
-          sex_comboboxtext = @builder.get_object('sex.Comboboxtext')
-          sex_comboboxtext.append_text(I18n.t('student.male'))
-          sex_comboboxtext.append_text(I18n.t('student.female'))
+          @builder.get_object('gender.Label').set_label(I18n.t('student.gender'))
+          gender_comboBoxText = @builder.get_object('gender.ComboBoxText')
+          gender_comboBoxText.append_text(' ')
+          gender_comboBoxText.append_text(I18n.t('student.male'))
+          gender_comboBoxText.append_text(I18n.t('student.female'))
           @builder.get_object('birth_date.Label').set_label(I18n.t('student.dob'))
+
+          @builder.get_object('register.Button').set_label(I18n.t('g.register'))
 
           _show()
         end

@@ -25,7 +25,7 @@ ja:
     name_reading: 氏名の読み方
     middle_name_reading: ミドルネームの読み方
     dob: 生年月日
-    sex: 性別
+    gender: 性別
     male: 男
     female: 女
     register: 生徒登録

@@ -25,7 +25,7 @@ en:
     name_reading: Name Reading
     middle_name_reading: Middle Name Reading
     dob: Birth Date
-    sex: Gender
+    gender: Gender
     male: Male
     female: Female
     register: Register Student
