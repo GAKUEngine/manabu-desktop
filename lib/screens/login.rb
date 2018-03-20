@@ -20,11 +20,11 @@ module ManabuDesktop
 
         @builder.get_object('server.Label').set_label(I18n.t('login.server'))
         @builder.get_object('secure.Label').set_label(I18n.t('login.secure'))
-        @server_comboboxtext = @builder.get_object('server.ComboBoxText')
+        @server_comboBoxText = @builder.get_object('server.ComboBoxText')
         @server_secure_switch = @builder.get_object('secure.Switch')
-        @cache_info[:servers].each{ |server| @server_comboboxtext.append_text(server[:addr])}
+        @cache_info[:servers].each{ |server| @server_comboBoxText.append_text(server[:addr])}
         if (@cache_info[:servers].length > 0)
-          @server_comboboxtext.set_active(0)
+          @server_comboBoxText.set_active(0)
           @server_secure_switch.active = @cache_info[:servers][0][:secure]
         end
         # TODO: set server details when selection is changed
@@ -39,7 +39,7 @@ module ManabuDesktop
         engage_button = @builder.get_object('engage.Button')
         engage_button.set_label(I18n.t('login.engage'))
         engage_button.signal_connect('clicked') {
-          _engage(@server_comboboxtext.active_text, @server_secure_switch.active?,
+          _engage(@server_comboBoxText.active_text, @server_secure_switch.active?,
                   @user_entry.text, @password_entry.text)
         }
 

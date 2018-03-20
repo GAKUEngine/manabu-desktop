@@ -1,8 +1,7 @@
 require_relative 'base'
 require_relative 'roster'
+require_relative '../tools'
 require 'manabu/client'
-require 'emojidex-rasters'
-require 'emojidex/data/utf'
 
 module ManabuDesktop
   module Screens
@@ -41,18 +40,17 @@ module ManabuDesktop
       end
 
       def _create_ability_icon(ability, list, icon_view)
-        emojidex = Emojidex::Data::UTF.new
         case ability
         when :Roster
-          pixbuf = GdkPixbuf::Pixbuf.new(file: emojidex.emoji[:student].paths[:png][:px64])
+          pixbuf = GdkPixbuf::Pixbuf.new(file: ManabuDesktop::Tools.emojidex.emoji[:student].paths[:png][:px64])
         when :Courses
-          pixbuf = GdkPixbuf::Pixbuf.new(file: emojidex.emoji[:notebook].paths[:png][:px64])
+          pixbuf = GdkPixbuf::Pixbuf.new(file: ManabuDesktop::Tools.emojidex.emoji[:notebook].paths[:png][:px64])
         when :Exams
-          pixbuf = GdkPixbuf::Pixbuf.new(file: emojidex.emoji[:white_check_mark].paths[:png][:px64])
+          pixbuf = GdkPixbuf::Pixbuf.new(file: ManabuDesktop::Tools.emojidex.emoji[:white_check_mark].paths[:png][:px64])
         when :Administration
-          pixbuf = GdkPixbuf::Pixbuf.new(file: emojidex.emoji[:wrench].paths[:png][:px64])
+          pixbuf = GdkPixbuf::Pixbuf.new(file: ManabuDesktop::Tools.emojidex.emoji[:wrench].paths[:png][:px64])
         else
-          pixbuf = GdkPixbuf::Pixbuf.new(file: emojidex.emoji[:question].paths[:png][:px64])
+          pixbuf = GdkPixbuf::Pixbuf.new(file: ManabuDesktop::Tools.emojidex.emoji[:question].paths[:png][:px64])
         end
 
         iter = list.append
