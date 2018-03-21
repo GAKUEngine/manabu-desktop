@@ -63,7 +63,7 @@
               <placeholder/>
             </child>
             <child>
-              <object class="GtkToggleButton" id="enrollment_status_filter.ToggleButton">
+              <object class="GtkToggleButton" id="enrollment_status_filters.ToggleButton">
                 <property name="label" translatable="yes">enrollment_status_filters</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -149,7 +149,7 @@
   </object>
   <object class="GtkPopover" id="enrollment_status_filters.Popover">
     <property name="can_focus">False</property>
-    <property name="relative_to">enrollment_status_filter.ToggleButton</property>
+    <property name="relative_to">enrollment_status_filters.ToggleButton</property>
     <property name="position">bottom</property>
     <property name="constrain_to">none</property>
     <child>

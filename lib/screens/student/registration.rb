@@ -2,6 +2,7 @@ require_relative '../base'
 require_relative '../../tools' 
 require 'manabu/client'
 require 'manabu/student'
+require 'manabu/students'
 
 module ManabuDesktop
   module Screens
@@ -79,6 +80,22 @@ module ManabuDesktop
         def _register(surname, name, middle_name,
                       surname_reading, name_reading, middle_name_reading,
                       gender, dob, enrollment_status, picture_path)
+          student = Manabu::Student.new(@client)
+          student.surname = surname
+          student.name = name
+          student.middle_name = middle_name
+          student.surname_reading = surname_reading
+          student.name_reading = name_reading
+          student.middle_name_reading = middle_name_reading
+          # TODO: gender
+          # TODO: DOB
+          # TODO: enrollment_status
+          # TODO: picture
+
+          students = Manabu::Students.new(@client)
+          students.register(student)
+
+          @window.destroy
         end
       end
     end

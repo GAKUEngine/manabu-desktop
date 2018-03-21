@@ -124,9 +124,13 @@ module ManabuDesktop
       end
 
       def _setup_search_filters()
-        enrollment_status_filters_toggleButton =
+        clear_filters_button = @builder.get_object('clear_filters.Button')
+        clear_filters_button.set_label(I18n.t('g.clear'))
+
+        enrollment_status_filters_toggleButton = \
           @builder.get_object('enrollment_status_filters.ToggleButton')
-        enrollment_status_filters_popover =
+        enrollment_status_filters_toggleButton.set_label(I18n.t('enrollment.filter'))
+        enrollment_status_filters_popover = \
           @builder.get_object('enrollment_status_filters.Popover')
 
         enrollment_status_filters_popover.signal_connect('closed') {
