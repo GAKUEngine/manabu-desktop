@@ -2,8 +2,15 @@
 <!-- Generated with glade 3.20.0 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
+  <object class="GtkImage" id="birth_date_picker.Image">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-index</property>
+  </object>
   <object class="GtkWindow" id="student_registration.Window">
     <property name="can_focus">False</property>
+    <property name="default_width">720</property>
+    <property name="default_height">300</property>
     <child>
       <object class="GtkBox">
         <property name="visible">True</property>
@@ -22,17 +29,6 @@
                   <object class="GtkGrid" id="name.Grid">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <child>
-                      <object class="GtkLabel" id="surname.Label">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">surname</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">0</property>
-                        <property name="top_attach">0</property>
-                      </packing>
-                    </child>
                     <child>
                       <object class="GtkLabel" id="name.Label">
                         <property name="visible">True</property>
@@ -86,17 +82,6 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkLabel" id="surname_reading.Label">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">surname_reading</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">0</property>
-                        <property name="top_attach">2</property>
-                      </packing>
-                    </child>
-                    <child>
                       <object class="GtkLabel" id="name_reading.Label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -119,16 +104,6 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkEntry" id="surname_reading.Entry">
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">0</property>
-                        <property name="top_attach">3</property>
-                      </packing>
-                    </child>
-                    <child>
                       <object class="GtkEntry" id="name_reading.Entry">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -148,6 +123,38 @@
                         <property name="top_attach">3</property>
                       </packing>
                     </child>
+                    <child>
+                      <object class="GtkLabel" id="surname.Label">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">surname</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkEntry" id="surname_reading.Entry">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="surname_reading.Label">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">surname_reading</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">2</property>
+                      </packing>
+                    </child>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -156,7 +163,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkGrid" id="student_details.grid">
+                  <object class="GtkGrid" id="student_details.Grid">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <child>
@@ -207,11 +214,12 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="birth_date_select.Button">
-                            <property name="label" translatable="yes">Date Selector</property>
+                          <object class="GtkToggleButton" id="birth_date_picker.ToggleButton">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
+                            <property name="image">birth_date_picker.Image</property>
+                            <property name="image_position">right</property>
                             <property name="always_show_image">True</property>
                           </object>
                           <packing>
@@ -226,12 +234,36 @@
                         <property name="top_attach">1</property>
                       </packing>
                     </child>
+                    <child>
+                      <object class="GtkLabel" id="enrollment_status.Label">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">enrollment_status</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="top_attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkComboBoxText">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="top_attach">1</property>
+                      </packing>
+                    </child>
                   </object>
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">True</property>
                     <property name="position">1</property>
                   </packing>
+                </child>
+                <child>
+                  <placeholder/>
                 </child>
               </object>
               <packing>
@@ -291,7 +323,7 @@
             </child>
           </object>
           <packing>
-            <property name="expand">False</property>
+            <property name="expand">True</property>
             <property name="fill">True</property>
             <property name="position">0</property>
           </packing>
@@ -311,5 +343,21 @@
         </child>
       </object>
     </child>
+  </object>
+  <object class="GtkPopover" id="birth_date_picker.Popover">
+    <property name="can_focus">False</property>
+    <property name="relative_to">birth_date_picker.ToggleButton</property>
+    <property name="position">bottom</property>
+    <child>
+      <object class="GtkCalendar" id="birth_date_picker.Calendar">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="year">1999</property>
+      </object>
+    </child>
+  </object>
+  <object class="GtkMenu" id="menu1">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
   </object>
 </interface>

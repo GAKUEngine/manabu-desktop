@@ -31,7 +31,7 @@ module ManabuDesktop
 
         @connections_list = @builder.get_object('connections.ListBox')
 
-        @status_bar = @builder.get_object('status.StatusBar')
+        @status_bar = @builder.get_object('status.Statusbar')
         @status_bar_context_id = @status_bar.get_context_id('Connection Status')
 
         set_connections_status(ManabuDesktop::Sessions.session_count)

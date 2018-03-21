@@ -23,6 +23,8 @@ module ManabuDesktop
         icon_view.set_text_column(LABEL_COL)
         list = Gtk::ListStore.new(GdkPixbuf::Pixbuf, String, String)
 
+        _setup_filter_controls()
+
         _fill_toolbox(list, icon_view)
 
         icon_view.signal_connect('item-activated') do |_widget, tree_path|
@@ -31,6 +33,21 @@ module ManabuDesktop
         end
 
         _show()
+      end
+
+      def _setup_filter_controls()
+        enrollment_status_filters_toggleButton =
+          @builder.get_object('enrollment_status_filters.ToggleButton')
+        enrollment_status_filters_popover =
+          @builder.get_object('enrollment_status_filters.Popover')
+
+        enrollment_status_filters_popover.signal_connect('closed') {
+          enrollment_status_filters_toggleButton.active = false
+        }
+        enrollment_status_filters_toggleButton.signal_connect('toggled') {
+          enrollment_status_filters_popover.visible =
+            enrollment_status_filters_toggleButton.active?
+        }
       end
 
       def _fill_toolbox(list, icon_view)
@@ -42,15 +59,20 @@ module ManabuDesktop
       def _create_ability_icon(ability, list, icon_view)
         case ability
         when :Roster
-          pixbuf = GdkPixbuf::Pixbuf.new(file: ManabuDesktop::Tools.emojidex.emoji[:student].paths[:png][:px64])
+          pixbuf = GdkPixbuf::Pixbuf.new(
+            file: ManabuDesktop::Tools.emojidex.emoji[:student].paths[:png][:px64])
         when :Courses
-          pixbuf = GdkPixbuf::Pixbuf.new(file: ManabuDesktop::Tools.emojidex.emoji[:notebook].paths[:png][:px64])
+          pixbuf = GdkPixbuf::Pixbuf.new(
+            file: ManabuDesktop::Tools.emojidex.emoji[:notebook].paths[:png][:px64])
         when :Exams
-          pixbuf = GdkPixbuf::Pixbuf.new(file: ManabuDesktop::Tools.emojidex.emoji[:white_check_mark].paths[:png][:px64])
+          pixbuf = GdkPixbuf::Pixbuf.new(
+            file: ManabuDesktop::Tools.emojidex.emoji[:white_check_mark].paths[:png][:px64])
         when :Administration
-          pixbuf = GdkPixbuf::Pixbuf.new(file: ManabuDesktop::Tools.emojidex.emoji[:wrench].paths[:png][:px64])
+          pixbuf = GdkPixbuf::Pixbuf.new(
+            file: ManabuDesktop::Tools.emojidex.emoji[:wrench].paths[:png][:px64])
         else
-          pixbuf = GdkPixbuf::Pixbuf.new(file: ManabuDesktop::Tools.emojidex.emoji[:question].paths[:png][:px64])
+          pixbuf = GdkPixbuf::Pixbuf.new(
+            file: ManabuDesktop::Tools.emojidex.emoji[:question].paths[:png][:px64])
         end
 
         iter = list.append

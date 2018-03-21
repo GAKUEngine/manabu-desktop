@@ -45,8 +45,22 @@ module ManabuDesktop
 
           # Birth date
           @builder.get_object('birth_date.Label').set_label(I18n.t('student.dob'))
-          birth_date_select_button = @builder.get_object('birth_date_select.Button')
-          #birth_date_select_button.set_image
+          birth_date_picker_toggleButton = @builder.get_object('birth_date_picker.ToggleButton')
+          pixbuf = GdkPixbuf::Pixbuf.new(
+            file: ManabuDesktop::Tools.emojidex.emoji[:calendar].paths[:png][:hdpi])
+          @builder.get_object('birth_date_picker.Image').set_pixbuf(pixbuf)
+          birth_date_picker_popover = @builder.get_object('birth_date_picker.Popover')
+          birth_date_picker_popover.signal_connect('closed') {
+            birth_date_picker_toggleButton.active = false
+          }
+          birth_date_picker_calendar = @builder.get_object('birth_date_picker.Calendar')
+          birth_date_picker_calendar.signal_connect('day-selected') {
+            puts birth_date_picker_calendar.date
+          }
+          birth_date_picker_toggleButton.signal_connect('toggled') {
+            birth_date_picker_popover.visible = birth_date_picker_toggleButton.active?
+          }
+
 
           # Registration
           register_button = @builder.get_object('register.Button')
