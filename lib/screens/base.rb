@@ -24,6 +24,7 @@ module ManabuDesktop
         end
 
         @window = builder.get_object("#{layout}.Window")
+        @window.set_title(I18n.t("#{layout}.title"))
         unless @@gtk_main_quit_set
           @window.signal_connect('delete-event') do |_widget|
             #@window.destroy()

@@ -16,6 +16,12 @@ en:
     failure: Login Failed
   toolbox:
     title: Tool Box
+  roster:
+    title: Roster
+  enrollment:
+    status: Enrollment Status
+    filter: Filter by Enrollment
+    select: Select Enrollment Status
   student:
     id: ID
     surname: Surname
@@ -43,3 +49,6 @@ en:
     edit: Edit
     delete: Delete
     select: Select
+    clear: Clear
+    reset: Reset
+    reset_filters: Reset Filters
