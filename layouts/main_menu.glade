@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.20.0 -->
+<!-- Generated with glade 3.22.1 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
   <object class="GtkImage" id="connect_button.Image">
@@ -12,45 +12,84 @@
     <property name="can_focus">False</property>
     <property name="stock">gtk-quit</property>
   </object>
-  <object class="GtkImage" id="settings_button.Image">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="stock">gtk-properties</property>
-  </object>
   <object class="GtkWindow" id="main_menu.Window">
     <property name="can_focus">False</property>
     <property name="resizable">False</property>
-    <property name="default_width">256</property>
-    <property name="default_height">256</property>
-    <property name="gravity">south</property>
+    <property name="default_width">200</property>
+    <property name="icon">img/manabu-kun-128.png</property>
+    <property name="gravity">north-east</property>
+    <child>
+      <placeholder/>
+    </child>
     <child>
       <object class="GtkBox" id="menu.Box">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
-        <property name="spacing">6</property>
         <property name="baseline_position">bottom</property>
         <child>
           <object class="GtkImage" id="logo.Image">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="has_tooltip">True</property>
-            <property name="pixbuf">img/gaku-logo-128.png</property>
+            <property name="pixbuf">img/titlebar.png</property>
           </object>
           <packing>
-            <property name="expand">False</property>
+            <property name="expand">True</property>
             <property name="fill">True</property>
             <property name="position">0</property>
           </packing>
         </child>
         <child>
-          <object class="GtkButton" id="connect.Button">
-            <property name="label" translatable="yes">connect</property>
+          <object class="GtkBox" id="controls.Box">
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-            <property name="image">connect_button.Image</property>
-            <property name="always_show_image">True</property>
+            <property name="can_focus">False</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkButton" id="connect.Button">
+                <property name="label" translatable="yes">connect</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">connect_button.Image</property>
+                <property name="always_show_image">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="settings.Button">
+                <property name="label" translatable="yes">settings</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">settings_button.Image</property>
+                <property name="always_show_image">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="exit.Button">
+                <property name="label" translatable="yes">exit</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">exit_button.Image</property>
+                <property name="always_show_image">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -59,13 +98,76 @@
           </packing>
         </child>
         <child>
-          <object class="GtkButton" id="settings.Button">
-            <property name="label" translatable="yes">settings</property>
+          <object class="GtkBox">
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-            <property name="image">settings_button.Image</property>
-            <property name="always_show_image">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkImage" id="transfer_status.Image">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="stock">gtk-missing-image</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSeparator">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="status.Image">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="stock">gtk-missing-image</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkStatusbar" id="status.Statusbar">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="margin_left">10</property>
+                <property name="margin_right">10</property>
+                <property name="margin_start">10</property>
+                <property name="margin_end">10</property>
+                <property name="margin_top">6</property>
+                <property name="margin_bottom">6</property>
+                <property name="orientation">vertical</property>
+                <property name="homogeneous">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="heartbeat.Image">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="stock">gtk-missing-image</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="pack_type">end</property>
+                <property name="position">5</property>
+              </packing>
+            </child>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -74,13 +176,9 @@
           </packing>
         </child>
         <child>
-          <object class="GtkButton" id="exit.Button">
-            <property name="label" translatable="yes">exit</property>
+          <object class="GtkProgressBar" id="buffer_status.ProgressBar">
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-            <property name="image">exit_button.Image</property>
-            <property name="always_show_image">True</property>
+            <property name="can_focus">False</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -109,29 +207,15 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="position">4</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkStatusbar" id="status.Statusbar">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="margin_left">10</property>
-            <property name="margin_right">10</property>
-            <property name="margin_start">10</property>
-            <property name="margin_end">10</property>
-            <property name="margin_top">6</property>
-            <property name="margin_bottom">6</property>
-            <property name="orientation">vertical</property>
-            <property name="spacing">2</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
             <property name="position">5</property>
           </packing>
         </child>
       </object>
     </child>
+  </object>
+  <object class="GtkImage" id="settings_button.Image">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-properties</property>
   </object>
 </interface>

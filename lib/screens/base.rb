@@ -10,7 +10,9 @@ module ManabuDesktop
       @@gtk_initialized = false
       @@gtk_main_quit_set = false
 
-      def initialize(layout, locale = :c)
+      # opts:
+      #   icon_path: path to an icon image for the window icon
+      def initialize(layout, locale = :c, opts = {})
         @builder = Gtk::Builder.new()
         @builder.add_from_file("#{__dir__}/../../layouts/#{layout}.glade")
 
@@ -25,6 +27,15 @@ module ManabuDesktop
 
         @window = builder.get_object("#{layout}.Window")
         @window.set_title(I18n.t("#{layout}.title"))
+        if opts.include? :icon_path
+          begin
+            @window.set_icon(opts[:icon_path])
+          rescue
+            @window.set_icon("#{__dir__}/../../layouts/img/gaku-logo-128.png")
+          end
+        else
+          @window.set_icon("#{__dir__}/../../layouts/img/gaku-logo-128.png")
+        end
         unless @@gtk_main_quit_set
           @window.signal_connect('delete-event') do |_widget|
             #@window.destroy()
