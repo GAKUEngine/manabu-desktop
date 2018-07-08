@@ -2,32 +2,46 @@ require_relative 'base'
 require_relative 'login'
 require_relative '../sessions'
 require_relative '../windows'
+require_relative './components/server_list_item'
 
 STATUS_ICON_SIZE = 16
 
 module ManabuDesktop
   module Screens
     class MainMenu < ManabuDesktop::Screens::Base
+
+      def _generate_server_list_item(user, server, port = 80)
+        sib_builder = Gtk::Builder.new()
+        sib_builder.add_from_file("#{__dir__}/../../layouts/server_listbox.glade")
+        lbr = sib_builder.get_object('server_instance.ListBoxRow')
+        label = sib_builder.get_object('server_id.Label')
+        label.set_label("#{user}@#{server}:#{port}")
+        lbr.show_all()
+        lbr
+      end
+
       def initialize()
         if ManabuDesktop::Windows.set_main_menu(self) == false
           # TODO: handle multiple main menus..
           STDERR.puts 'Tried to initialize multiple Main Menus!'
         end
 
-
         super('main_menu', :c)
-        @window.set_resizable(false)
-        @window.gravity = Gdk::Gravity::NORTH_EAST
-        @window.move((Gdk::Screen.width - @window.width_request), 0)
+        @window.set_resizable(false) # Main menu is a fixed size
+        @window.gravity = Gdk::Gravity::NORTH_EAST # Float to top right
+        @window.move((Gdk::Screen.width - @window.width_request), 0) # Try to position manually
 
+        # Connection button
         connect_button = @builder.get_object('connect.Button')
         connect_button.set_label(I18n.t('main_menu.connect'))
         connect_button.signal_connect('clicked') { ManabuDesktop::Screens::Login.new() }
 
+        # Settings button
         settings_button = @builder.get_object('settings.Button')
         settings_button.set_label(I18n.t('main_menu.settings'))
         settings_button.signal_connect('clicked') { puts 'Settings coming soon' }
 
+        # Exit button (closes all other windows)
         exit_button = @builder.get_object('exit.Button')
         exit_button.set_label(I18n.t('main_menu.exit'))
         exit_button.signal_connect('clicked') do |_widget|
@@ -35,7 +49,18 @@ module ManabuDesktop
           Gtk.main_quit()
         end
 
+        # Connection list
         @connections_list = @builder.get_object('connections.ListBox')
+        sli = ManabuDesktop::Screens::Components::ServerListItem.new("a", "b")
+        @connections_list.add(sli.list_box_row)
+        #@connections_list.add(ServerInstanceBox.new("c", "d"))
+        #lbr = Gtk::ListBoxRow.new()
+        #box = Gtk::Box.new(Gtk::Orientation::HORIZONTAL)
+        #lbr.add box
+        #label = Gtk::Label.new("test")
+        #box.pack_start(label, expand: false, fill: false, padding: 0)
+        #@connections_list.add(lbr)
+        @connections_list.show_all
 
         @status_bar = @builder.get_object('status.Statusbar')
         @status_bar_context_id = @status_bar.get_context_id('Connection Status')

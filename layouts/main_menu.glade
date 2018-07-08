@@ -12,10 +12,16 @@
     <property name="can_focus">False</property>
     <property name="stock">gtk-quit</property>
   </object>
+  <object class="GtkImage" id="settings_button.Image">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-properties</property>
+  </object>
   <object class="GtkWindow" id="main_menu.Window">
     <property name="can_focus">False</property>
     <property name="resizable">False</property>
     <property name="default_width">200</property>
+    <property name="default_height">500</property>
     <property name="icon">img/manabu-kun-128.png</property>
     <property name="gravity">north-east</property>
     <child>
@@ -35,7 +41,7 @@
             <property name="pixbuf">img/titlebar.png</property>
           </object>
           <packing>
-            <property name="expand">True</property>
+            <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="position">0</property>
           </packing>
@@ -195,6 +201,7 @@
               <object class="GtkViewport" id="connections.Viewport">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="shadow_type">none</property>
                 <child>
                   <object class="GtkListBox" id="connections.ListBox">
                     <property name="visible">True</property>
@@ -205,17 +212,12 @@
             </child>
           </object>
           <packing>
-            <property name="expand">False</property>
+            <property name="expand">True</property>
             <property name="fill">True</property>
             <property name="position">5</property>
           </packing>
         </child>
       </object>
     </child>
-  </object>
-  <object class="GtkImage" id="settings_button.Image">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="stock">gtk-properties</property>
   </object>
 </interface>
