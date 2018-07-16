@@ -51,8 +51,11 @@ module ManabuDesktop
 
         # Connection list
         @connections_list = @builder.get_object('connections.ListBox')
-        sli = ManabuDesktop::Screens::Components::ServerListItem.new("a", "b")
-        @connections_list.add(sli.list_box_row)
+        # TODO: delete lines here after implementation [reference]
+        #sli = ManabuDesktop::Screens::Components::ServerListItem.new("a", "b")
+        #@connections_list.add(sli.list_box_row)
+        #sli = ManabuDesktop::Screens::Components::ServerListItem.new("c", "d")
+        #@connections_list.add(sli.list_box_row)
         #@connections_list.add(ServerInstanceBox.new("c", "d"))
         #lbr = Gtk::ListBoxRow.new()
         #box = Gtk::Box.new(Gtk::Orientation::HORIZONTAL)
