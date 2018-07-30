@@ -2,6 +2,11 @@
 <!-- Generated with glade 3.22.1 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
+  <object class="GtkImage" id="server_menu.Image">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">img/gaku-logo-32.png</property>
+  </object>
   <object class="GtkListBoxRow" id="server_instance.ListBoxRow">
     <property name="visible">True</property>
     <property name="can_focus">True</property>
@@ -10,13 +15,11 @@
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <child>
-          <object class="GtkMenuButton" id="server_menu.MenuButton">
+          <object class="GtkButton" id="server_menu.Button">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <child>
-              <placeholder/>
-            </child>
+            <property name="image">server_menu.Image</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -49,6 +52,18 @@
             <property name="position">2</property>
           </packing>
         </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkPopover" id="server_menu.Popover">
+    <property name="can_focus">False</property>
+    <property name="relative_to">server_menu.Button</property>
+    <property name="position">left</property>
+    <property name="constrain_to">none</property>
+    <child>
+      <object class="GtkListBox" id="server_menu.ListBox">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
       </object>
     </child>
   </object>

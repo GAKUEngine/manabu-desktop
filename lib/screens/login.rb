@@ -19,9 +19,11 @@ module ManabuDesktop
         @window.resizable = false
 
         @builder.get_object('server.Label').set_label(I18n.t('login.server'))
-        @builder.get_object('secure.Label').set_label(I18n.t('login.secure'))
         @server_comboBoxText = @builder.get_object('server.ComboBoxText')
+        
+        @builder.get_object('secure.Label').set_label(I18n.t('login.secure'))
         @server_secure_switch = @builder.get_object('secure.Switch')
+
         @cache_info[:servers].each{ |server| @server_comboBoxText.append_text(server[:addr])}
         if (@cache_info[:servers].length > 0)
           @server_comboBoxText.set_active(0)
@@ -35,6 +37,9 @@ module ManabuDesktop
         @user_entry = @builder.get_object('user.Entry')
         @builder.get_object('password.Label').set_label(I18n.t('login.password'))
         @password_entry = @builder.get_object('password.Entry')
+
+        @builder.get_object('toolbox.Label').set_label(I18n.t('login.toolbox'))
+        @open_toolbox_switch = @builder.get_object('toolbox.Switch')
 
         engage_button = @builder.get_object('engage.Button')
         engage_button.set_label(I18n.t('login.engage'))
@@ -60,6 +65,7 @@ module ManabuDesktop
 
       end
 
+      # Attempt to engage a connection with the given prarameters
       def _engage(server, secure, user, password)
         addr = /^[^:|^\/]*[^:|^\/]/.match(server) # server part
         port = /[^:]\d[^\D]*/.match(server).to_s.to_i # port part
@@ -71,7 +77,11 @@ module ManabuDesktop
                                      force_secure_connection: secure)
         if @client.status == :connected
           ManabuDesktop::Sessions.add_session(@client)
-          _open_toolbox(@client)
+          if @open_toolbox_switch.active?
+            _open_toolbox(@client)
+          else
+            @window.destroy
+          end
         end
       end
 

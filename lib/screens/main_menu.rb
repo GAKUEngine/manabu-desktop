@@ -9,15 +9,27 @@ STATUS_ICON_SIZE = 16
 module ManabuDesktop
   module Screens
     class MainMenu < ManabuDesktop::Screens::Base
+      attr_accessor :connection_entries
 
-      def _generate_server_list_item(user, server, port = 80)
-        sib_builder = Gtk::Builder.new()
-        sib_builder.add_from_file("#{__dir__}/../../layouts/server_listbox.glade")
-        lbr = sib_builder.get_object('server_instance.ListBoxRow')
-        label = sib_builder.get_object('server_id.Label')
-        label.set_label("#{user}@#{server}:#{port}")
-        lbr.show_all()
-        lbr
+      def add_connection_entry(session_handle)
+        sli = _generate_server_list_item(session_handle,
+                                   session_handle.auth.username,
+                                   session_handle.auth.host,
+                                   session_handle.auth.port)
+        @connections_list.add(sli)
+        @connections_list.show_all()
+      end
+
+      def _generate_server_list_item(client, user, server, port = 80)
+        sli = ManabuDesktop::Screens::Components::ServerListItem.new(client, user, server, port)
+        @connections_list.add(sli.list_box_row)
+        #sib_builder = Gtk::Builder.new()
+        #sib_builder.add_from_file("#{__dir__}/../../layouts/server_listbox.glade")
+        #lbr = sib_builder.get_object('server_instance.ListBoxRow')
+        #label = sib_builder.get_object('server_id.Label')
+        #label.set_label("#{user}@#{server}:#{port}")
+        #lbr.show_all()
+        #lbr
       end
 
       def initialize()
@@ -52,8 +64,6 @@ module ManabuDesktop
         # Connection list
         @connections_list = @builder.get_object('connections.ListBox')
         # TODO: delete lines here after implementation [reference]
-        #sli = ManabuDesktop::Screens::Components::ServerListItem.new("a", "b")
-        #@connections_list.add(sli.list_box_row)
         #sli = ManabuDesktop::Screens::Components::ServerListItem.new("c", "d")
         #@connections_list.add(sli.list_box_row)
         #@connections_list.add(ServerInstanceBox.new("c", "d"))

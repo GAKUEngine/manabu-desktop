@@ -16,6 +16,7 @@ module ManabuDesktop
       @@active_sessions << session_handle
       main_menu = ManabuDesktop::Windows.get_main_menu()
       main_menu.set_connections_status(session_count) unless main_menu == nil
+      main_menu.add_connection_entry(session_handle)
     end
 
     def self.remove_session(session_identifier)
