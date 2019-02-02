@@ -21,8 +21,8 @@ module ManabuDesktop
       end
 
       def _generate_server_list_item(client, user, server, port = 80)
-        sli = ManabuDesktop::Screens::Components::ServerListItem.new(client, user, server, port)
-        @connections_list.add(sli.list_box_row)
+        #sli = ManabuDesktop::Screens::Components::ServerListItem.new(client, user, server, port)
+        #@connections_list.add(sli.list_box_row)
         #sib_builder = Gtk::Builder.new()
         #sib_builder.add_from_file("#{__dir__}/../../layouts/server_listbox.glade")
         #lbr = sib_builder.get_object('server_instance.ListBoxRow')
