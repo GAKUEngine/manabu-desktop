@@ -5,4 +5,7 @@
 *.glade~
 *.gem
 tmp/
+build/
+bin/manabu-desktop
+lib/natives/
 Gemfile.lock
