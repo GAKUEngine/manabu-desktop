@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+	<gresource prefix="/layouts">
+		<file>login.glade</file>
+		<file>img/gaku-logo-128.png</file>
+		<file>img/gaku-logo-32.png</file>
+		<file>img/gaku-logo.png</file>
+		<file>img/manabu-kun.png</file>
+	</gresource>
+</gresources>

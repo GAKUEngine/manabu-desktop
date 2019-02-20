@@ -2,6 +2,10 @@
 =====================================
 The Manabu Desktop is a GUI interface built on GTK for the Manabu Gaku Engine client.
 
+Warning!
+========
+Manabu Desktop is currently very much a work in progress.
+
 Installation
 ============
 Either install the gem:  
@@ -33,6 +37,15 @@ Test server:
 Test admin user:
  * username: admin
  * password: 123456
+
+Desktop Client Composition
+==========================
+Due to limitations in the Ruby GTK implementation most of manabu-desktop is implemented in  
+C++ with GTK+. However, to facilitate various extensibility features there is a bridge to 
+Ruby and a set of simplified interfaces for most parts of the client, including a Ruby native 
+login screen, student roster, etc. Using this bridge and these basic interfaces can help you 
+build individual extension modules such as GUI student importers/exporters and visual 
+tools for generating printables.
 
 License & Contribution
 ======================
