@@ -6,9 +6,9 @@ int main(int argc, char *argv[])
 	Gtk::Main kit(argc, argv);
 
 	// Launch the login screen
-	Manabu::Desktop::Login loginScreen = Manabu::Desktop::Login();
+	Manabu::Desktop::Login loginScreen;
 
-	kit.run();
+	kit.run(loginScreen);
 
 	return 0;
 }

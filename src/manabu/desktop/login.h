@@ -9,13 +9,11 @@ namespace Manabu
 	namespace Desktop
 	{
 		//! Displays a login screen
-		class Login
+		class Login : public Gtk::Window
 		{
-			private:
-			void buildLoginScreen();
+		private:
 
-			public:
-			Gtk::Window *window;
+		public:
 			Login();
 			~Login();
 		};

@@ -2,16 +2,10 @@
 
 Manabu::Desktop::Login::Login()
 {
-	buildLoginScreen();
+	Glib::RefPtr<Gtk::Builder> builder = Gtk::Builder::create_from_resource("/layouts/login.glade");
+	//builder->get_widget("login.Window", ???); <恐らくこの???に何かを入れればok?
 }
 
 Manabu::Desktop::Login::~Login()
 {
-}
-
-void Manabu::Desktop::Login::buildLoginScreen()
-{
-	Glib::RefPtr<Gtk::Builder> builder = Gtk::Builder::create_from_resource("/layouts/login.glade");
-	builder->get_widget("login.Window", window);
-	window->show();
 }
