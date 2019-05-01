@@ -11,13 +11,20 @@ namespace Manabu
 		//! Displays a login screen
 		class Login
 		{
-			private:
+		private:
 			void buildLoginScreen();
 
-			public:
+			void onEngage();
+
+		public:
 			Gtk::Window *window;
 			Login();
 			~Login();
+
+        protected:
+            Gtk::Entry *serverEntry, *userEntry, *passwordEntry;
+			Gtk::Switch *secureSwitch, *toolboxSwitch;
+            Gtk::Button *engageButton;
 		};
 	}
 }
