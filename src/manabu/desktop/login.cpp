@@ -1,31 +1,33 @@
 #include "login.h"
 
-Manabu::Desktop::Login::Login()
+Manabu::Desktop::Login::Login(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& refBuilder)
+				: Gtk::Window(cobject)
 {
-	buildLoginScreen();
 }
 
 Manabu::Desktop::Login::~Login()
 {
 }
 
-void Manabu::Desktop::Login::buildLoginScreen()
+Manabu::Desktop::Login* Manabu::Desktop::Login::getInstance()
 {
+	Login* screen;
     Glib::RefPtr<Gtk::Builder> builder = Gtk::Builder::create_from_resource("/layouts/login.glade");
-    builder->get_widget("login.Window", window);
 
-	builder->get_widget("server.Entry", serverEntry);
-	builder->get_widget("secure.Switch", secureSwitch);
+    builder->get_widget_derived("login.Window", screen);
 
-    builder->get_widget("user.Entry", userEntry);
-    builder->get_widget("password.Entry", passwordEntry);
+	builder->get_widget("server.Entry", screen->serverEntry);
+	builder->get_widget("secure.Switch", screen->secureSwitch);
 
-	builder->get_widget("toolbox.Switch", toolboxSwitch);
+    builder->get_widget("user.Entry", screen->userEntry);
+    builder->get_widget("password.Entry", screen->passwordEntry);
 
-    builder->get_widget("engage.Button", engageButton);
-	engageButton->signal_clicked().connect(sigc::mem_fun(this, &Manabu::Desktop::Login::onEngage));
+	builder->get_widget("toolbox.Switch", screen->toolboxSwitch);
 
-    window->show();
+    builder->get_widget("engage.Button", screen->engageButton);
+	screen->engageButton->signal_clicked().connect(sigc::mem_fun(screen, &Manabu::Desktop::Login::onEngage));
+
+    return screen;
 }
 
 void Manabu::Desktop::Login::onEngage()

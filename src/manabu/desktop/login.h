@@ -9,7 +9,7 @@ namespace Manabu
 	namespace Desktop
 	{
 		//! Displays a login screen
-		class Login
+		class Login : public Gtk::Window
 		{
 		private:
 			void buildLoginScreen();
@@ -19,7 +19,10 @@ namespace Manabu
 		public:
 			Gtk::Window *window;
 			Login();
+			Login(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& refBuilder);
 			~Login();
+
+			static Manabu::Desktop::Login* getInstance();
 
         protected:
             Gtk::Entry *serverEntry, *userEntry, *passwordEntry;
