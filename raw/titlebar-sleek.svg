@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="192"
+   height="24"
+   viewBox="0 0 50.799999 6.3500002"
+   version="1.1"
+   id="svg821"
+   inkscape:export-filename="/home/zero/repo/GAKU/manabu-desktop/layouts/img/titlebar.png"
+   inkscape:export-xdpi="64"
+   inkscape:export-ydpi="64"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="titlebar-sleek.svg">
+  <defs
+     id="defs815" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.959798"
+     inkscape:cx="69.292273"
+     inkscape:cy="33.859926"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1020"
+     inkscape:window-x="0"
+     inkscape:window-y="28"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata818">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="レイヤー 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-290.64998)">
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ff2a2a;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.20197988;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect1381-6"
+       width="5.864572"
+       height="15.425471"
+       x="142.74846"
+       y="178.56477"
+       transform="matrix(0.54925115,0.83565733,-0.39389022,0.91915749,0,0)" />
+    <path
+       inkscape:connector-curvature="0"
+       d="m 41.47488,298.15735 -1.48664,-3.59213 1.486672,-3.5921 3.592131,-1.4867 3.591111,1.48661 -0.717392,0.71739 -2.87385,-1.19039 -2.87441,1.19062 -1.190616,2.87441 1.190715,2.87464 2.874409,1.19062 2.874541,-1.19058 0.801648,-1.93532 -0.939241,-0.93923 h 2.342416 l -1.487231,3.5921 -3.592823,1.48812 z m 1.470937,-0.54371 h 1.572145 l 0.07935,-0.19254 -5.7e-5,-1.91841 H 41.53004 l -0.387654,-0.93753 h 3.77045 l 0.121323,-0.13911 h -1.183901 l -0.937524,-0.93749 h 4.308567 l -1.060169,1.0756 1.465404,10e-4 0.938549,0.93852 -3.0283,-10e-4 v 1.91848 l 0.309917,0.75199 -0.780508,0.31733 -2.120373,-0.87685 z m -1.356722,-4.12771 0.44504,-1.07502 4.600644,-0.003 -0.05232,-0.26457 -0.221318,-0.0921 c 0,0 0.247791,-0.48155 0.371684,-0.72237 l 1.10916,0.4593 -0.620691,0.6207 0.878725,0.001 0.444872,1.07482 -1.045385,6.8e-4 -0.139072,-0.13911 h -4.586847 l -0.139072,0.13911 -1.04542,-6.8e-4 z m 0.702971,-1.69667 1.108403,-0.45897 0.371655,0.72187 -0.859792,0.35572 z m 2.036019,-0.84277 0.739023,-0.30656 0.739125,0.30623 -0.165182,0.8075 -0.574106,-0.23754 -0.574401,0.2379 z"
+       id="path3914-7"
+       style="display:inline;fill:#87caf3;fill-opacity:1;stroke-width:0.01884033" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#1a1a1a;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.20197988;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect1381"
+       width="5.864572"
+       height="15.425471"
+       x="141.21506"
+       y="179.95888"
+       transform="matrix(0.54925115,0.83565733,-0.39389022,0.91915749,0,0)" />
+  </g>
+</svg>

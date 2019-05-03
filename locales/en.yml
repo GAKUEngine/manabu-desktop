@@ -11,6 +11,7 @@ en:
     user: User
     password: Password
     secure: Force Encryption
+    toolbox: Show Toolbox?
     engage: Engage
     success: Login Succeeded
     failure: Login Failed
@@ -36,6 +37,7 @@ en:
     female: ♀ Female
     register: Register Student
   g:
+    Toolbox: Tool Box
     Students: Students
     Roster: Student Roster
     Courses: Courses

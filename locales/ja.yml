@@ -11,6 +11,7 @@ ja:
     user: ユーザー
     password: パスワード
     secure: 暗号化の強制
+    toolbox: ツール・ボックスを開く
     engage: エンゲージ
     success: ログインが成功しました
     failure: ログインに失敗しました
@@ -36,6 +37,7 @@ ja:
     female: ♀ 女
     register: 生徒登録
   g:
+    Toolbox: ツールボックス
     Students: 生徒
     Roster: 生徒名簿
     Courses: 授業
