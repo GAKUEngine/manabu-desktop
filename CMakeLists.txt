@@ -16,15 +16,15 @@ if(MSYS OR MINGW)
 	string(REGEX REPLACE "C:" "/c/" GTKMM_INCLUDE_DIRS "${GTKMM_INCLUDE_DIRS}")
 endif(MSYS OR MINGW)
 
-include_directories(${GTKMM_INCLUDE_DIRS})
-link_directories(${GTKMM_LIBRARY_DIRS})
+include_directories(${GTKMM_INCLUDE_DIRS} ../libmanabu/build/lib/)
+link_directories(${GTKMM_LIBRARY_DIRS} ../libmanabu/build/include/)
 
 # Add other flags to the compiler
 add_definitions(${GTKMM_CFLAGS_OTHER})
 
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib/natives)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib/natives)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/res)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 
 set(MANABU_DESKTOP_CXX_FILES
 	${PROJECT_SOURCE_DIR}/src/main.cpp
