@@ -65,6 +65,12 @@ cmake ..
 make
 ```
 
+Linux Build Notes
+-----------------
+Other than basic build tools you'll mostly only need the GTK MM v3 libraries and headers 
+(and their dependencies). You can obtain these on Debian/Ubuntu based systems with 
+```sudo apt-get install libgtkmm-3.0-dev```.
+
 Windows Build Notes
 -------------------
 Building with msys2 is generally recommended simply because we build most components within 
