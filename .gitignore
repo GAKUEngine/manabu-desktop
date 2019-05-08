@@ -6,7 +6,7 @@
 *.gem
 tmp/
 build/
-bin/manabu-desktop
 lib/natives/
 src/manabu/desktop/gresources.c
+bin/ManabuDesktop
 Gemfile.lock
