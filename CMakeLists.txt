@@ -10,6 +10,8 @@ project(ManabuDesktop CXX)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(GTKMM REQUIRED gtkmm-3.0)
 
+find_package(manabu REQUIRED)
+
 # Generated paths starting with "C:" need to be converted to /c/ to work with MSYS2
 # TODO remove this or do it some way better at some point in the future
 if(MSYS OR MINGW)
@@ -17,15 +19,15 @@ if(MSYS OR MINGW)
 endif(MSYS OR MINGW)
 
 # TODO use packages
-#include_directories(${GTKMM_INCLUDE_DIRS} ../libmanabu/build/include/)
-#link_directories(${GTKMM_LIBRARY_DIRS} ../libmanabu/build/lib/)
+include_directories(${GTKMM_INCLUDE_DIRS} ../libmanabu/build/include/)
+link_directories(${GTKMM_LIBRARY_DIRS} ../libmanabu/build/lib/)
 
 # Add other flags to the compiler
 add_definitions(${GTKMM_CFLAGS_OTHER})
 
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 
 set(MANABU_DESKTOP_CXX_FILES
 	${PROJECT_SOURCE_DIR}/src/main.cpp
@@ -46,4 +48,4 @@ add_custom_command(
 add_executable(ManabuDesktop ${MANABU_DESKTOP_CXX_FILES})
 
 # Link to libraries
-target_link_libraries(ManabuDesktop ${GTKMM_LIBRARIES})
+target_link_libraries(ManabuDesktop ${GTKMM_LIBRARIES} Manabu::manabu)
