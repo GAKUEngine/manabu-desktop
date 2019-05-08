@@ -1,4 +1,5 @@
 #include "login.h"
+#include <manabu.h>
 
 Manabu::Desktop::Login::Login(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& refBuilder)
 				: Gtk::Window(cobject)
@@ -25,12 +26,14 @@ Manabu::Desktop::Login* Manabu::Desktop::Login::getInstance()
 	builder->get_widget("toolbox.Switch", screen->toolboxSwitch);
 
     builder->get_widget("engage.Button", screen->engageButton);
-	screen->engageButton->signal_clicked().connect(sigc::mem_fun(screen, &Manabu::Desktop::Login::onEngage));
+	screen->engageButton->signal_clicked().connect(sigc::mem_fun(screen, &Login::onEngage));
 
     return screen;
 }
 
 void Manabu::Desktop::Login::onEngage()
 {
-
+	Manabu* manabu = new Manabu();
+	manabu->connect();
+	manabu->authenticate("admin", "123456");
 }

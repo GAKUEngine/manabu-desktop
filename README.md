@@ -65,6 +65,21 @@ cmake ..
 make
 ```
 
+If you are working with a development verison of libmanabu you'll need to specify where you have 
+built it with the -Dmanabu_DIR argument passed to cmake. Say for example you cloned libmanabu 
+right next to the manabu-desktop folder in your directory structure and built it in the standard 
+build directory, your relative path would be ../libmanabu/build, which would make the cmake 
+command ```cmake -Dmanabu_DIR=../libmanabu/build ..```. So the whole cmake build flow would look 
+something like this:
+```sh
+cd manabu-desktop
+mkdir build
+cd build
+cmake -DManabu_DIR=../libmanabu/build ..
+make
+```
+
+
 Linux Build Notes
 -----------------
 Other than basic build tools you'll mostly only need the GTK MM v3 libraries and headers 
