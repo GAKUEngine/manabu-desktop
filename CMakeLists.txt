@@ -48,4 +48,4 @@ add_custom_command(
 add_executable(ManabuDesktop ${MANABU_DESKTOP_CXX_FILES})
 
 # Link to libraries
-target_link_libraries(ManabuDesktop ${GTKMM_LIBRARIES} Manabu::manabu)
+target_link_libraries(ManabuDesktop ${GTKMM_LIBRARIES} manabu)
