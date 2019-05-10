@@ -12,6 +12,8 @@ pkg_check_modules(GTKMM REQUIRED gtkmm-3.0)
 
 find_package(Manabu REQUIRED)
 
+find_package(msgpack)
+
 # Generated paths starting with "C:" need to be converted to /c/ to work with MSYS2
 # TODO remove this or do it some way better at some point in the future
 if(MSYS OR MINGW)
@@ -28,6 +30,8 @@ add_definitions(${GTKMM_CFLAGS_OTHER})
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+
+set(CMAKE_CXX_STANDARD 14)
 
 set(MANABU_DESKTOP_CXX_FILES
 	${PROJECT_SOURCE_DIR}/src/main.cpp
