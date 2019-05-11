@@ -11,23 +11,24 @@ namespace Manabu
 		//! Displays a login screen
 		class Login : public Gtk::Window
 		{
-		private:
-			void buildLoginScreen();
+			private:
+				void buildLoginScreen();
+				void onEngage();
+				
+				std::function<void()> callback;
 
-			void onEngage();
+			public:
+				Gtk::Window *window;
+				Login();
+				Login(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& refBuilder);
+				~Login();
+				static Manabu::Desktop::Login* getInstance();
+				void setCallback(void (callback)(void));
 
-		public:
-			Gtk::Window *window;
-			Login();
-			Login(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& refBuilder);
-			~Login();
-
-			static Manabu::Desktop::Login* getInstance();
-
-        protected:
-            Gtk::Entry *serverEntry, *userEntry, *passwordEntry;
-			Gtk::Switch *secureSwitch, *toolboxSwitch;
-            Gtk::Button *engageButton;
+			protected:
+				Gtk::Entry *serverEntry, *userEntry, *passwordEntry;
+				Gtk::Switch *secureSwitch, *toolboxSwitch;
+				Gtk::Button *engageButton;
 		};
 	}
 }

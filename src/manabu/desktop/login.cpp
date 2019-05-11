@@ -45,17 +45,23 @@ void Manabu::Desktop::Login::onEngage()
 	// 	protocol = "https";
 	// }
 	if (!manabu->connect(protocol, host)) {
-			// TODO: 失敗通知
-			printf("%s\n", "connect ng");
+		// TODO: 失敗通知
+		printf("%s\n", "connect ng");
 	}
 
 	string user = this->userEntry->get_text().c_str();
 	string password = this->passwordEntry->get_text().c_str();
 	if (manabu->authenticate(user, password)) {
 		// TODO: 画面移動
+		this->callback();
 		printf("%s\n", "authenticate ok");
 	} else {
 		// TODO: 失敗通知
 		printf("%s\n", "authenticate ng");
 	}
+}
+
+void Manabu::Desktop::Login::setCallback(void (callback)(void))
+{
+	this->callback = callback;
 }
