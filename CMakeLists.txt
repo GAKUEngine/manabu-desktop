@@ -6,6 +6,9 @@ find_program(CMAKE_CXX_COMPILER NAMES $ENV{CXX} g++ PATHS ENV PATH NO_DEFAULT_PA
 
 project(ManabuDesktop CXX)
 
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 # Find GTK+ headers/libs with PkgConfig
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(GTKMM REQUIRED gtkmm-3.0)
@@ -32,8 +35,15 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
 set(MANABU_DESKTOP_CXX_FILES
 	${PROJECT_SOURCE_DIR}/src/main.cpp
 	${PROJECT_SOURCE_DIR}/src/manabu/desktop/gresources.c
+	${PROJECT_SOURCE_DIR}/src/manabu/desktop/session.cpp
 	${PROJECT_SOURCE_DIR}/src/manabu/desktop/login.cpp
 )
+
+set(MANABU_DESKTOP_H_FILES
+	${PROJECT_SOURCE_DIR}/src/manabu/desktop/session.h
+	${PROJECT_SOURCE_DIR}/src/manabu/desktop/login.h
+)
+
 
 set_source_files_properties(${PROJECT_SOURCE_DIR}/src/manabu/desktop/gresources.c PROPERTIES LANGUAGE CXX)
 

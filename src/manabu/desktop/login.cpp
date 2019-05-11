@@ -1,5 +1,5 @@
 #include "login.h"
-#include <manabu.h>
+#include "session.h"
 
 Manabu::Desktop::Login::Login(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& refBuilder)
 				: Gtk::Window(cobject)
@@ -33,7 +33,8 @@ Manabu::Desktop::Login* Manabu::Desktop::Login::getInstance()
 
 void Manabu::Desktop::Login::onEngage()
 {
-	Manabu* manabu = new Manabu();
-	manabu->connect();
-	manabu->authenticate("admin", "123456");
+	Session::manabu = new Manabu();
+	Session::manabu->connect("http",
+			this->serverEntry->get_buffer()->get_text());
+	Session::manabu->authenticate("admin", "123456");
 }
