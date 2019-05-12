@@ -76,10 +76,12 @@ debug symbols so you can run ManabuDesktop through a debugger such as gdb, by pa
 cd manabu-desktop
 mkdir build
 cd build
-cmake -DCMAKE_BUILD_TYPE=Debug -DManabu_DIR=../libmanabu/build .
+cmake -DCMAKE_BUILD_TYPE=Debug -DManabu_DIR=../libmanabu/build ..
 make
 ```
 
+*Notice: If you make any alterations to GALDE layout files, you must either ```make clean``` or 
+manually delete ```src/manabu/desktop/gresources.c``` for it to be regenerated.
 
 Linux Build Notes
 -----------------

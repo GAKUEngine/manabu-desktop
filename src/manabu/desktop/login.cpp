@@ -1,6 +1,9 @@
 #include "login.h"
 #include "session.h"
 
+#include <iostream>
+using namespace std;
+
 Manabu::Desktop::Login::Login(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& refBuilder)
 				: Gtk::Window(cobject)
 {
@@ -12,6 +15,7 @@ Manabu::Desktop::Login::~Login()
 
 Manabu::Desktop::Login* Manabu::Desktop::Login::getInstance()
 {
+	clog << "Creating login screen..." << endl;
 	Login* screen;
     Glib::RefPtr<Gtk::Builder> builder = Gtk::Builder::create_from_resource("/layouts/login.glade");
 
@@ -52,18 +56,25 @@ void Manabu::Desktop::Login::onEngage()
 		// TODO regex for port
 	}
 
+	clog << "Attempting to connect to [" << protocol << "://" << host << ":" << port << "]..." \
+		<< endl;
 	if (Session::manabu->connect(protocol, host, port)) {
+		clog << "Successfully connected to server." << endl;
 		this->statusLabel->set_text("Connected to server.");
 	} else {
+		cerr << "Couldn't connect to server." << endl;
 		this->statusLabel->set_text("Couldn't connect to server.");
 	}
 
 	string user = this->userEntry->get_text();
 	string password = this->passwordEntry->get_text();
+	clog << "Attempting to authenticate..." << endl;
 	if (Session::manabu->authenticate(user, password)) {
+		clog << "Authentication successful. Opening main menu." << endl;
 		this->statusLabel->set_text("Authenticated.");
 		this->callback();
 	} else {
+		cerr << "Authentication failed!" << endl;
 		this->statusLabel->set_text("Authentication failed!");
 	}
 }
