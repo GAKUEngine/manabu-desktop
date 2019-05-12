@@ -53,9 +53,11 @@ add_custom_command(
 	DEPENDS ${SOURCE_FILES}
 	WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/layouts
 )
-
 # Generate the ManabuDesktop executable
 add_executable(ManabuDesktop ${MANABU_DESKTOP_CXX_FILES})
 
 # Link to libraries
 target_link_libraries(ManabuDesktop ${GTKMM_LIBRARIES} manabu)
+
+set(CMAKE_BUILD_TYPE Debug)
+SET(CMAKE_DEBUG_POSTFIX "_d" CACHE STRING "postfix applied to debug build of libraries")

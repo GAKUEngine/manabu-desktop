@@ -1,3 +1,6 @@
+#ifndef _MANABU_DESKTOP_SESSION_H_
+#define _MANABU_DESKTOP_SESSION_H_
+
 #include <manabu.h>
 
 namespace Manabu
@@ -13,4 +16,4 @@ namespace Manabu
 	}
 }
 
-
+#endif /* _MANABU_DESKTOP_SESSION_H_ */

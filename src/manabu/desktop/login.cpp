@@ -17,13 +17,14 @@ Manabu::Desktop::Login* Manabu::Desktop::Login::getInstance()
 
     builder->get_widget_derived("login.Window", screen);
 
+	builder->get_widget("status.Label", screen->statusLabel);
+
 	builder->get_widget("server.Entry", screen->serverEntry);
 	builder->get_widget("secure.Switch", screen->secureSwitch);
 
     builder->get_widget("user.Entry", screen->userEntry);
     builder->get_widget("password.Entry", screen->passwordEntry);
 
-	builder->get_widget("toolbox.Switch", screen->toolboxSwitch);
 
     builder->get_widget("engage.Button", screen->engageButton);
 	screen->engageButton->signal_clicked().connect(sigc::mem_fun(screen, &Login::onEngage));
@@ -34,7 +35,40 @@ Manabu::Desktop::Login* Manabu::Desktop::Login::getInstance()
 void Manabu::Desktop::Login::onEngage()
 {
 	Session::manabu = new Manabu();
-	Session::manabu->connect("http",
-			this->serverEntry->get_buffer()->get_text());
-	Session::manabu->authenticate("admin", "123456");
+
+	this->statusLabel->set_text("Trying to connect...");
+	string protocol = "https"; // Default to HTTPS
+	if (!this->secureSwitch->get_state()) { // Set to HTTP if switch is off
+	 	protocol = "http";
+	}
+
+	unsigned int port = 80;
+	string host = this->serverEntry->get_text();
+	if (host.length() == 0) { // If no host is in the host field assume a local instance
+		protocol = "http";
+		host = "localhost";
+		port = 9000;
+	} else { // Check host field for port information
+		// TODO regex for port
+	}
+
+	if (Session::manabu->connect(protocol, host, port)) {
+		this->statusLabel->set_text("Connected to server.");
+	} else {
+		this->statusLabel->set_text("Couldn't connect to server.");
+	}
+
+	string user = this->userEntry->get_text();
+	string password = this->passwordEntry->get_text();
+	if (Session::manabu->authenticate(user, password)) {
+		this->statusLabel->set_text("Authenticated.");
+		this->callback();
+	} else {
+		this->statusLabel->set_text("Authentication failed!");
+	}
+}
+
+void Manabu::Desktop::Login::setCallback(void (callback)(void))
+{
+	this->callback = callback;
 }
