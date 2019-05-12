@@ -37,11 +37,13 @@ set(MANABU_DESKTOP_CXX_FILES
 	${PROJECT_SOURCE_DIR}/src/manabu/desktop/gresources.c
 	${PROJECT_SOURCE_DIR}/src/manabu/desktop/session.cpp
 	${PROJECT_SOURCE_DIR}/src/manabu/desktop/login.cpp
+	${PROJECT_SOURCE_DIR}/src/manabu/desktop/dash.cpp
 )
 
 set(MANABU_DESKTOP_H_FILES
 	${PROJECT_SOURCE_DIR}/src/manabu/desktop/session.h
 	${PROJECT_SOURCE_DIR}/src/manabu/desktop/login.h
+	${PROJECT_SOURCE_DIR}/src/manabu/desktop/dash.h
 )
 
 

@@ -1,20 +1,34 @@
 #include <gtkmm.h>
 #include "manabu/desktop/login.h"
-#include <stdio.h>
+#include "manabu/desktop/dash.h"
+#include <iostream>
+using namespace std;
 
+static Gtk::Main *kit;
+Manabu::Desktop::Login* loginScreen;
+Manabu::Desktop::Dash* dashScreen;
+
+// When login succeeds, hide the Login screen and display the Dashboard
 void loginCallback() {
-	printf("%s\n", "login!!!");
+	clog << "Hiding Login and displaying Dashboard..." << endl;
+
+	dashScreen = Manabu::Desktop::Dash::getInstance();
+	loginScreen->hide();
+	kit->run(*dashScreen);
+	loginScreen->remove();
+	delete loginScreen;
 }
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
-	Gtk::Main kit(argc, argv);
+	kit = new Gtk::Main(argc, argv);
 
-	// Launch the login screen
-	Manabu::Desktop::Login* loginScreen = Manabu::Desktop::Login::getInstance();
+	// Launch the Login screen
+	clog << "Displaying Login..." << endl;
+	loginScreen = Manabu::Desktop::Login::getInstance();
 	loginScreen->setCallback(loginCallback);
 
-	kit.run(*loginScreen);
+	kit->run(*loginScreen);
 
 	return 0;
 }

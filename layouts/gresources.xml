@@ -6,5 +6,7 @@
 		<file>img/gaku-logo-32.png</file>
 		<file>img/gaku-logo.png</file>
 		<file>img/manabu-kun.png</file>
+		<file>dash.glade</file>
+		<file>img/titlebar.png</file>
 	</gresource>
 </gresources>

@@ -1,5 +1,6 @@
 #include "login.h"
 #include "session.h"
+#include "dash.h"
 
 #include <iostream>
 using namespace std;
@@ -15,8 +16,8 @@ Manabu::Desktop::Login::~Login()
 
 Manabu::Desktop::Login* Manabu::Desktop::Login::getInstance()
 {
-	clog << "Creating login screen..." << endl;
-	Login* screen;
+	clog << "Creating Login screen..." << endl;
+	Login *screen;
     Glib::RefPtr<Gtk::Builder> builder = Gtk::Builder::create_from_resource("/layouts/login.glade");
 
     builder->get_widget_derived("login.Window", screen);
@@ -70,7 +71,7 @@ void Manabu::Desktop::Login::onEngage()
 	string password = this->passwordEntry->get_text();
 	clog << "Attempting to authenticate..." << endl;
 	if (Session::manabu->authenticate(user, password)) {
-		clog << "Authentication successful. Opening main menu." << endl;
+		clog << "Authentication successful. Opening Dashboard." << endl;
 		this->statusLabel->set_text("Authenticated.");
 		this->callback();
 	} else {

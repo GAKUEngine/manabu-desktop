@@ -18,11 +18,11 @@ namespace Manabu
 				std::function<void()> callback;
 
 			public:
-				Gtk::Window *window;
-				Login();
+				//Gtk::Window *window;
+
 				Login(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& refBuilder);
 				~Login();
-				static Manabu::Desktop::Login* getInstance();
+				static Login* getInstance();
 				void setCallback(void (callback)(void));
 
 			protected:
@@ -33,6 +33,5 @@ namespace Manabu
 		};
 	}
 }
-
 
 #endif /* _MANABU_DESKTOP_LOGIN_H_ */
