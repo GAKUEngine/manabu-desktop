@@ -19,7 +19,7 @@ namespace Manabu
 				~Dash();
 				static Dash* getInstance();
 			protected:
-				Gtk::Viewport *studentViewport;
+				Gtk::Viewport *studentRosterViewport, *studentFormViewport;
 		};
 	}
 }

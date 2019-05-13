@@ -22,17 +22,27 @@ Manabu::Desktop::Dash* Manabu::Desktop::Dash::getInstance()
 	builder->get_widget_derived("dash.Window", screen);
 	
 	// stundet tab content
-	builder->get_widget("tab_student.Viewport", screen->studentViewport);
+	builder->get_widget("tab_student_roster.Viewport", screen->studentRosterViewport);
+	builder->get_widget("tab_student_form.Viewport", screen->studentFormViewport);
 
+  // student list
 	Glib::RefPtr<Gtk::Builder> rosterBuilder = Gtk::Builder::create_from_resource("/layouts/student_roster.glade");
 	Gtk::Box *rosterBox;
 	rosterBuilder->get_widget("student_roster.Box", rosterBox);
-
-	screen->studentViewport->add(*rosterBox);
+	screen->studentRosterViewport->add(*rosterBox);
 	
 	// TODO: 生徒一覧を取ってくる。
 	// 生徒一覧を取ってきたらrosterBuilderにあるstudent_row.ListBoxRowをテンプレートにしてrowを作成する。
 	// 作成したらstudent_roster_list.Boxの中に入れる
+	
+	// student new
+	Glib::RefPtr<Gtk::Builder> formBuilder = Gtk::Builder::create_from_resource("/layouts/student_form.glade");
+	Gtk::Box *formBox;
+	formBuilder->get_widget("student_form.Box", formBox);
+	screen->studentFormViewport->add(*formBox);
+	
+	// TODO: フォームと連携して実際にsubmitできるように
+	
 
 	return screen;
 }

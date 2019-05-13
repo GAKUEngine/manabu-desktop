@@ -9,5 +9,6 @@
 		<file>dash.glade</file>
 		<file>img/titlebar.png</file>
 		<file>student_roster.glade</file>
+		<file>student_form.glade</file>
 	</gresource>
 </gresources>
