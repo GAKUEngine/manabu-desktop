@@ -8,5 +8,6 @@
 		<file>img/manabu-kun.png</file>
 		<file>dash.glade</file>
 		<file>img/titlebar.png</file>
+		<file>student_roster.glade</file>
 	</gresource>
 </gresources>
