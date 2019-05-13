@@ -15,6 +15,8 @@ pkg_check_modules(GTKMM REQUIRED gtkmm-3.0)
 
 find_package(Manabu REQUIRED)
 
+find_package(msgpack)
+
 # Generated paths starting with "C:" need to be converted to /c/ to work with MSYS2
 # TODO remove this or do it some way better at some point in the future
 if(MSYS OR MINGW)

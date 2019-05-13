@@ -3,6 +3,7 @@
 #include "dash.h"
 
 #include <iostream>
+#include <regex>
 using namespace std;
 
 Manabu::Desktop::Login::Login(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& refBuilder)
@@ -54,7 +55,11 @@ void Manabu::Desktop::Login::onEngage()
 		host = "localhost";
 		port = 9000;
 	} else { // Check host field for port information
-		// TODO regex for port
+		regex re(R"(:\d+)");
+		smatch m;
+		regex_search(host, m, re);
+		port = stoi(m.str().substr(1, m.str().length() - 1));
+		host = host.substr(0, host.length() - m.str().length());
 	}
 
 	clog << "Attempting to connect to [" << protocol << "://" << host << ":" << port << "]..." \
