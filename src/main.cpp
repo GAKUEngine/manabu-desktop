@@ -4,6 +4,8 @@
 #include <iostream>
 using namespace std;
 
+#include <glibmm/i18n.h>
+
 static Gtk::Main *kit;
 Manabu::Desktop::Login* loginScreen;
 Manabu::Desktop::Dash* dashScreen;
@@ -21,6 +23,12 @@ void loginCallback() {
 
 int main(int argc, char* argv[])
 {
+	// TODO: switch locale
+	setlocale(LC_ALL, "");
+	setenv("LANG", "ja_JP.utf8", 1);
+	bindtextdomain("manabu", "./../locales");
+	textdomain("manabu");
+
 	kit = new Gtk::Main(argc, argv);
 
 	// Launch the Login screen
